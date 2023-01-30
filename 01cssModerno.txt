@@ -33,5 +33,309 @@ Grid:
 	> Apresentação exercicios de grid e flexbox;
 	> Resolvendo exercicio de grid e flexbox;
 
+**24/01/2023**
+
+<visão geral da responsividade>:
+
+Responsividade nada mais é do que o "ajuste" do tamanho e layout da tela, de acordo com o dispositivo utilizado.
+
+atalho F12 acessa o menu inspecionar.
+
+é sempre bom deixar responsivo com no minimo 280px de largura.
+A responsividade vem hoje como primordial, pensando em "mobile first".
+
+<Entendendo Media Query>:
+
+Aula sendo feita inicialmente no VScode.
+o atalho "lorem35" nos trás lorens diferentes e aleatórios.
+o 35 aponta o "tamanho".
+
+configuração inicial para suposta responsividade a partir dos tablets:
+
+.img-content {          (classe das imagens)
+    width: 765px;
+    height: 400px;
+}
+
+.text-content {          (classe dos textos)
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+utilizando o media query:
+
+**compilado do site treinaWeb para explicação do media query que não ficou claro na aula do obc**
+
+**O que são media queries?
+Media query nada mais é do que uma estrutura do css que prmite aplicar estilizações especificas para uma página web de acordo com certas condições, fazendo com que esta pagina possa se adequar ao layout de tela em diferentes tamanhos e tipos de midia.**
+
+Sintaxe básica:
+
+@media (condição) {
+	/* Estilizações CSS */
+}
+
+sintaxe utilizada aula:
+
+
+
+
+Como funciona o Media Query?
+Pelo que entendi: o media query são adaptações que informamos ao CSS para usar quando a "tela" for "abaixo de", ou quando for ajustado em acordo com a condição (que fica entre parenteses), ou seja: 
+
+@media (max-width: 795px) {
+  body {
+	background-color: red;
+  }
+}
+
+neste caso, parametrizamos que: 
+
+abaixo de 795px, menor que 795px, todo o body ficara com o background em vermelho. Acima disso, manterá estilizações aplicadas no geral.
+
+a partir disto, criamos outra media query para iniciar a partir dos 500px, porem, px (pixels) não é exatamente responsivo, então deveremos utilizar outra unidade de medida. Neste caso, utilizamos a porcentagem.
+
+**nota do Rafa** 
+No bootcamp do Dio, aprendi em responsividade que o correto para o CSS atual seria utilizar as medidas em "rem" por ser mais responsivo. 
+Pesquisar sobre!**
+
+
+**Entendendo a responsividade na prática**
+<mobile first>
+
+Mobile basico:
+até 375 px (medium);
+425 px (large);
+
+Atenção ao tamanho das fontes em 320 px;
+
+modo tablet: 
+425 até 768 px;
+
+no código, o tamanho maior do media query sempre deve ficar em cima, sempre de cima para baixo, do maior para o menor;
+
+não existe "receita de bolo" para a responsividade, cada caso depende de um layout.
+
+atentar em: 
+
+começcar por 320px e deste, para o 425x;
+dos 425px para os 790px;
+
+a partir disto, nem sempre será necessário praticar a responsividade, até o 1024 (desktop large).
+Na sequencia, diminuindo o zoom no inspecionar, vemos o 2560px (monitor 4k) que normalmente, seria mais interessante o conteudo centralizado, mais parecido com o de 425px.
+
+desafio: criar um layout especifico para 1440px até 2560 px.
+
+**27/01/23**
+
+<Visão geral sobre o flexbox:>
+
+O que é flex-container?
+O flex container é um metodo de organização de layout que, com ele manipulamos itens dentro de um container de forma dinamica, ou seja, idenpendente do tamanho do container, os itens vão se adaptar a ele.
+O flex box organiza o container em acordo com o dispositivo que o usuário está utilizando.
+É muito utilizado quando queremos algo em formato de linha.
+
+é muito utilizado também em headers e footers, como em barras de navegação.
+
+
+<Criando um layout para estudos:>
+
+***OBS: NA HORA DE LINKAR UM CSS, SEMPRE LEMBRAR DE INSERIR ./ ANTES DO STYLE.CSS**
+
+./style.css
+
+html:
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox layout</title>
+    <link rel="stylesheet" type="text/css" href="./sytle.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="item">
+            <p>Item 1</p>
+        </div>
+
+        <div class="item">
+            <p>Item 2</p>
+        </div>
+
+        <div class="item">
+            <p>Item 3</p>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+CSS:
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+essa seleção com o * é muito bom de se fazer no inicio de todo novo projeto para que todas as configurações de marging e padding sejam "zeradas";
+
+box-sizing: é o modo como os itens da página são renderizados, e neste caso, utilizaremos o "border-box".
+Deixa a pagina com alinhamentos melhores para utilizar novos paddings e margins.
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing link mdn para o artigo box-sizing;
+
+** unidade de medida vh**
+abreviação de viewport height, ou altura de vizualização do usuário.
+é mais responsivo que os pixels, na verdade pixels não é responsivo.
+
+**30/01/2023**
+
+Manipulando o flex-container:
+display é a proriedade que define como nossos itens serão organizados em tela.
+
+display: flex; (os itens ficam alinhados em linha;
+
+flex-direction: colum; (os itens ficam alinhados em coluna)
+
+flex-direction: colum-reverse; (os itens ficam alinhados em coluna, porém, do 					  ultimo para o primeiro item e, ao invés de 					        fixar ao "topo" da pagina, fica fixado no   				  		  bottom);
+
+flex-direction: row; (é a seleção "padrão" do display: flex;, normalmente os 				    itens já vem alinhados em linha)
+
+flex-direction: row-reverse; (os itens ficam alinhados em linha, porém do 						ultimo para o primeiro item e colados ao lado    				      direito da tela)
+
+<Entendendo o gap:> 
+
+O GAP nada mais é que o espaçamento entre os itens;
+Quando os itens estão alinhados em coluna, cada item é considerado uma linha.
+
+row-gap: 15px; (usado quando os itens estão configurados em coluna, altera 			    somente o espaçamento entre os itens, mas não altera o espaço    		    dos itens em relação ao body, diferente do marging ou 			  	    padding.)
+
+colum-gap: 15px; (funciona da mesma maneira que o row-gap, porém garante o  				espaçamento dos itens, quando estes estão configurados em 				linha)
+
+gap: 15px; (é como se fosse a junção de row-gap e colum-gap, adicionando 15px  		de distância entre os itens, tanto em configuração de linha, como 		em configuração de coluna)
+
+gap: 0px 15px; (aponta que, para os itens configurados em coluna, o gap sera 			    de 0px e, para os itens configurados em linha, o gap sera de    		    15px, facilitando a inserção das configurações e diminuido as 	          linhas de código, porém, fica menos semântico)
+
+<Entendendo o justify-content>:
+
+justify-content: alinhamento horizontal dos itens do flex-container;
+
+justify-content possui algumas propriedades como center, start e end;
+
+o Start aponta o alinhamento no inicio da página e o end, no final, porém, ao utiliar tanto o start quanto o end, recomenda-se utilizar o parâmetro "flex-start" ou "flex-end", por conta da responsividade.
+
+Deve-se lembrar que o parâmetro "flex-center" não existe, sendo este apontado como "center".
+
+justify-content: space-around; (configura os itens para terem o mesmo   						  espaçamento tanto na esquerda, quanto na 						  direita, não importando o espaçamento que 	  			   	 	  terão entre eles, no "centro")
+
+justify-content: space-between; (configura os itens para que fiquem o mais 						   separados possivel, colando o primeiro e o  						   ultimo item nas bordas e dividindo o espaço  					   restante em epaços iguais entre os itens.)
+
+justify-content: space-evenly; (configura os itens para que tenham o mesmo 						  espaçamento entre si, não importando o 							  espaçamento das bordas, porém, é comum que 						  também nas bordas, fique com o mesmo espaço do 					  que o utilizado entre os itens.)
+atenção:
+
+utilizando o flex-direction com o parâmetro colum e, justify-content com o parâmentro center, não centralizará a coluna na tela de maneira vertical, apenas ficará centralizado na horizontal, mantendo os mesmos espaços entre o top e o bottom;
+
+<entendendo o align-items:>
+
+align-items: é basicamente a propriedade inversa do justify-content, alinhando os itens na tela de forma vertical;
+ele também possui algumas propriedades distintas;
+
+align-items: stretch; (em tradução livre, seria esticar, ou seja, esticar os 				     itens verticalmente para ocupar o espaço restante da 				     tela. Esse parâmetro só pode ser utilizado se a 					     propriedade "height" do item, a altura, não esteja 				     configurada ou seja ignorada dentro da descendência.)
+
+para termos o alongamento horizontal dos itens, ou seja, alongarmos as linhas e não as colunas, podemos utilizar os seguintes parâmetros e propriedades:
+
+na classe do container: 
+
+flex-direction: colum;
+
+na classe do item:
+
+mantemos a configuração do height e zeramos a configuração do width;
+
+para alinhamos a coluna no centro, utilizamos as propriedades na classe do container na seguinte forma:
+
+flex-direction: colum;
+justify-content: center;
+align-items: center;
+
+<entendendo o flex-wrap:>
+
+o flex-wrap é a quebra dos nossos itens. Wrap, segundo o professor, significa quebra em sua tradução, mas não é, wrap é enrolar. 
+esse cara tem uma didática estranha.
+
+**nota: definição de flex-wrap segundo o mdn docs:**
+
+A propriedade CSS flex-wrap define se os itens flexíveis são forçados a ficarem na mesma linha ou se podem ser quebradas em varias linhas. Se o argumento for valido, ele define a direção em que as linhas são empilhadas.
+
+
+flex-wrap: a configuração padrão é "nowrap", que segundo ele é "não quebrar", ou seja, ele não vai quebrar a linha;
+
+flex-wrap: wrap-reverse; (os itens da linha quebram para a responsividade, 					  porém, agrupando os itens do ultimo para o 						  primeiro.)
+
+flex-wrap: wrap; (os itens quebram a linha para a responsividade, agrupando do 			primeiro ao ultimo, na posição vertical, em acordo com o 				equipamento usado pelo usuário;
+
+<transformando flex-item em container:>
+
+insere a proriedade display com o parametro flex dentro da classe do item, da seguinte forma:
+
+.item {
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+    background-color: white;
+    display: flex;            **
+    justify-content: center;  **
+    align-items: center;      **
+}
+
+desta forma os itens se transformam em container e os paragrafos se transformam em itens.
+
+<exercicio de fixação 1:>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
