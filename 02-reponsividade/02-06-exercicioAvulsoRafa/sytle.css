@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #a9a9a9;
+}
+
+.paragraph {
+    font-size: 30px;
+}
+
+.header {
+    display: flex;
+    flex-basis: 100%; /* quando o item está dentro do container, é boa pratica usar o flexbasis ao invés do width */
+    padding: 10px;
+    justify-content: center;
+    background-color: white;
+    border: 2px solid black;
+}
+
+.main-content {
+    display: flex;
+    flex: 1 0 400px;
+    padding: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center; /* horizontal */
+    align-items: center; /* vertical */ 
+    align-content: center; /* melhora a responsividade da distancia entre os itens */
+}
+
+.item {
+    display: flex;
+    width: 350px;
+    height: 240px;
+    border: 2px solid black;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+    display: flex;
+    flex-basis: 100%;
+    padding: 10px;
+    justify-content: center;
+    background-color: white;
+    border: 2px solid black;
+}
