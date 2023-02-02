@@ -499,6 +499,54 @@ Serve também para separarmos conteúdo e, assim como o flexbox, temos a quebra 
 
 Modificando o layout de estudos para o Grid.
 
+<manipulando css grid:>
+
+definição das colunas do grid: 
+grid-template-columns: 25% 50% 25% -> mostra que: no grid do "template" serão 3 colunas: a primeira, da esquerda para a direita, com 25% de ocupação do espaço, a segunda, do meio, com 50%, e a terceira, da direita, com 25%.
+
+Sempre é bom utilizarmos porcentagem ou frames; não usaremos pixels porque não são responsivos.
+
+Frames-> são "pedaços" da tela que daremos para cada item, neste caso, as colunas;
+
+cada frame equivale a 25% da "tela", neste caso:
+
+grid-template-columns: 1fr 2fr 1fr;
+
+a cada frame ou porcentagem adicionada, será inserida mais uma coluna no grid.
+
+existe uma forma mais prática de inserir essas unidades no CSS, que é usando o "repeat":
+
+grid-template-columns: repeat(3, 1fr);
+
+significa o que: que é para repetir 3 vezes, ou seja, 3 colunas de 1 frame.
+somente para colunas com o mesmo frame, ou seja, com a mesma "medida";
+
+definição das LINHAS do grid:
+
+grid-template-rows: é bem semelhante ao template columns:
+grid-template-rows: 1fr 2fr 1fr;
+
+teremos 3 linhas: a primra com 1fr (frame), a segunda, central, com 2fr e a terceira com 1fr.
+
+grid-auto-rows: 210px; configura todas as linhas com 210px automaticamente, porém, quebram o texto.
+
+
+
+
+<entendendo o gap:>
+é basicamente a mesma coisa do flex-box, com a diferença que temos:
+row-gap: gap de linha;
+column-gap: gap de coluna;
+gap: que é o gap geral e um atalho para os dois;
+
+em resumo:
+gap: 10px 15px aplica 10px de distância entre as linhas e 15px de distância entre as colunas;
+
+
+
+
+
+
 
 
 
