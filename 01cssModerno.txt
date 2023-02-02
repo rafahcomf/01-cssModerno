@@ -297,37 +297,207 @@ desta forma os itens se transformam em container e os paragrafos se transformam 
 
 <exercicio de fixação 1:>
 
+exercicio de manipulação do flex-container.
+
+Criar um header baseado no mockup;
+
+feito com a resolução, segue codigo:
+
+HTML: 
+
+    <title>Exercicio Header - FlexContainer</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+
+<body>
+    <header class="header">
+
+            <img src="./imgs/iconrock-red.svg" alt="icon-rock" class="icon-rock">
+            <img src="./imgs/logo-onebitcode.svg" alt="logo-OBC" class="logo-OBC">
+
+        <nav class="buttons">
+            <button class="buttonHeader">
+                Inicio
+            </button>
+
+            <button class="buttonHeader">
+                FAQ
+            </button>
+                
+            <button class="buttonHeader">
+                Suporte                
+            </button>
+
+        </nav>
+
+        
+    </header>
+    
+</body>
+</html>
+
+CSS - manipulando o header:
+
+* {                         (zerando parametros do body)
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 25px;
+    align-items: center;
+}
+
+.icon-rock {
+    width: 40px;
+}
+
+.logo-OBC {
+    width: 200px;
+}
+
+manipulando os botões:
+observação: os botoes só foram juntos para o lado direito pois eles estão dentro de uma "div", ou seja: neste caso, o space-betweem foi usado e a tela foi dividida por 3 elementos: 
+ >imagem do icone;
+ >imagem do logo;
+ >div dos botoes.
+
+Ou seja: como ja aprendi, sempre é melhor dividir em "blocos" por uso, e isso se refletirá na aplicação do CSS, com menor quantidade de código por layout;
 
 
 
+observação: a principio eu criei os botoes dentro de um "nav" e não dentro de uma "div". agora criarei dentro de uma section para ver os resultados.
+
+os resultados dos botoes criados dentro de uma section foi igual ao criado em nav. manterei em section pois divs são MUITO genericas.
+
+css botoes: 
+
+.buttons {
+    display: flex;
+    gap: 10px;         (distância dos botões entre si)
+}
+
+.buttonHeader {
+    border-radius: 10px;             (arredonda os cantos dos botões)
+    background-color: transparent;   (auto explicaivo)
+    border-color: white;             (cor da borda solida)
+    color: white;				 (cor do texto do botão)
+    font-size: 20px;			 (tamanho da donte do texto do botão)
+    padding: 10px 15px;              (distância do texto do botão)
+    cursor: pointer;			 (altera o ponteiro do mouse)
+    transition: 0.4s;     		 (tempo de transição do hover)
+}
+
+.buttonHeader:hover {
+    border-color: #ff0044;
+}
 
 
+*hover: cria uma transição da cor original da borda, neste caso, white, para a cor especificada na regra. 
+neste caso o hover funciona com o apontamento do mouse sobre o botão, assim como o cursor, que altera apos ser posicionado no botão, mas com um atraso de 0.4 segundos, deixando a transição mais fluida. 
+
+mais um ponto:
+
+a section com a classe buttons serviu para que os 3 botoes ficassem dentro de um "container" e a classe buttonHeader serviu para que os 3 botões fossem manipulados ao mesmo tempo porque, apesar de textos diferentes, eles são iguais.
 
 
+***31/01/2023***
+
+<manipulando flex-items:>
+
+Adicionar uma classe extra para cada item, não aplicando aos 3 itens a mesma classe;
+
+(código na pasta do curso)
+
+flex-basis: tamanho básico do item;
+para ser utilizado, o parametro do width deve ser removido ou comentado;
+(atalho alt + shift + a comenta a linha selecionada)
+
+O flex-basis é muito importante pois usamos ele com outras funcionalidades:
+
+<entendendo o flex-grow:>
+
+o flex grow é uma forma que temos de aumentar o tamanho dos itens sem fazer com que eles quebrem de imediato;
+
+por padrão, o flex-grow vem configurado como 0;
+
+flex-grow é usado juntamente com outras propriedades flex flex-shrink e flex-basis, e normalmente definido usando o flex abreviação para garantir que todos os valores sejam definidos.
+
+basicamente o flex-grow é desativado por padrão com o número 0 e ativado pelo número 1;
+
+<entendendo o flex-shrink:>
+
+o flex shrink está diretamente ligado a diminuição de cada item e, seu valor padrão inicial é 1;
+o valor padrão 1 aponta que, todos os itens diminuirão de forma igual;
+
+inserindo o valor 2 mostra que, o item 1 diminuirá menos que os outros dois itens que, diminuirão entre si de forma igual;
+
+<entendendo o flex:>
+
+é um atalho para o flex-basis, flex grow e flex shrink;
+
+item-2 {
+    flex: 1 0 200px;
+}
+
+explicando: 
+
+1= flex-grow -> mostra que o item-2 ocupara todo o espaço que ele tiver disponivel;
+
+0= flex-shrink -> apontando que o item não vai diminuir;
+
+200px= flex-basis -> aponta que o flex-basis do item será de 200px;
+
+funcionaría muito bem se dentro dos itens quisessemos colocar por exemplo o item-1 como header, o item-2 como corpo e o item-3 como footer;
+
+é muito util usar desta maneira para responsividade para que ative o "scrool" da página;
+
+<entendendo order:>
+
+basicamente como o seu nome, o order manipula a ordem dos itens.
+ele altera a ordem tanto com o alinhamento padrão "row", tanto com o alinhamento apontado em column;
+
+<entendendo o align-self:>
+funciona tanto com column quanto com row;
+é muito util caso queiramos fazer modificações em apenas um item do container;
+
+***01/02/2023***
+
+<exercicio de fixação:>
+apresentação do exercico de flex box:
+
+header, footer e itens;
+tudo deve ser responsivo até 4k;
+
+é necessário tentar resolver antes de ver as repostas.
+
+não consegui resolver :(
+
+<explicação da resolução:>
+
+o flex-basis 100% foi usado no lugar do width pois o item está dentro do container;
+Quando usamos junto o flex ou flex-shrink, ai sim usamos o width;
 
 
+***02/02/2023***
 
+<conhecendo o grid:>
 
+O grid é um organizado de layout, com ele teremos uma divisão de linhas e colunas, diferente da que temos com o flexbox.
+Acaba sendo mais especifica e organizada;
 
+O grid serve para ter linhas e colunas.
 
+Mesmo com a facilidade de manipulação do layout de pagina, o grid não é a melhor forma de criarmos e manipularmos Header e Footer, e sim a melhor forma de usar é pelas classes header e footer, em contanineres separados.
 
+O grid será utilizado quando queremos conteudo dividido com linhas e colunas, como o side bar ou algo assim.
+Serve também para separarmos conteúdo e, assim como o flexbox, temos a quebra quando a tela vai diminuindo, ou seja, é responsivo também.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Modificando o layout de estudos para o Grid.
 
 
 

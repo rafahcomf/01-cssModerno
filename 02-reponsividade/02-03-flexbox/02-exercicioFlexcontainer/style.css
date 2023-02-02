@@ -1,0 +1,47 @@
+/*removendo margin e padding do body*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*manipulando o header*/
+
+.header {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 25px;
+    align-items: center;
+}
+
+.icon-rock {
+    width: 40px;
+}
+
+.logo-OBC {
+    width: 200px;
+}
+
+/*manipulando botões*/
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.buttonHeader {
+    border-radius: 10px;
+    background-color: transparent;
+    border-color: white;
+    color: white;
+    font-size: 20px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.buttonHeader:hover {
+    border-color: #ff0044;
+}
