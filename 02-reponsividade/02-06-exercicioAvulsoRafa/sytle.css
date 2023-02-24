@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+body > .container {
+    background-image: url(./01-img/space-stars-background-illustration-night-sky_160081-132.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .container {
     min-height: 100vh;
     display: flex;
@@ -13,6 +19,7 @@
 
 .paragraph {
     font-size: 30px;
+    font-family: 'Inconsolata', monospace;
 }
 
 .header {
@@ -20,8 +27,10 @@
     flex-basis: 100%; /* quando o item está dentro do container, é boa pratica usar o flexbasis ao invés do width */
     padding: 10px;
     justify-content: center;
-    background-color: white;
-    border: 2px solid black;
+    background-color: #273c75;
+    opacity: 95%;
+    border: 2px solid #000000;
+    font-weight: 600;
 }
 
 .main-content {
@@ -43,6 +52,11 @@
     background-color: white;
     justify-content: center;
     align-items: center;
+    cursor: pointer;    
+}
+
+.item:hover {
+    border-color: #ff0044;
 }
 
 .footer {
@@ -50,6 +64,8 @@
     flex-basis: 100%;
     padding: 10px;
     justify-content: center;
-    background-color: white;
-    border: 2px solid black;
+    background-color: #273c75;
+    opacity: 95%;
+    border: 2px solid #000000;
+    font-weight: 600;
 }

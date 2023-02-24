@@ -1,0 +1,132 @@
+ ***02/02/2023***
+
+<conhecendo o grid:>
+
+O grid é um organizador de layout, com ele teremos uma divisão de linhas e colunas, diferente da que temos com o flexbox.
+Acaba sendo mais especifica e organizada;
+
+O grid serve para ter linhas e colunas.
+
+Mesmo com a facilidade de manipulação do layout de pagina, o grid não é a melhor forma de criarmos e manipularmos Header e Footer, e sim a melhor forma de usar é pelas classes header e footer, em contanineres separados.
+
+O grid será utilizado quando queremos conteudo dividido com linhas e colunas, como o side bar ou algo assim.
+Serve também para separarmos conteúdo e, assim como o flexbox, temos a quebra quando a tela vai diminuindo, ou seja, é responsivo também.
+
+Modificando o layout de estudos para o Grid.
+
+<manipulando css grid:>
+
+definição das colunas do grid: 
+grid-template-columns: 25% 50% 25% -> mostra que: no grid do "template" serão 3 colunas: a primeira, da esquerda para a direita, com 25% de ocupação do espaço, a segunda, do meio, com 50%, e a terceira, da direita, com 25%.
+
+Sempre é bom utilizarmos porcentagem ou frames; não usaremos pixels porque não são responsivos.
+
+Frames-> são "pedaços" da tela que daremos para cada item, neste caso, as colunas;
+
+cada frame equivale a 25% da "tela", neste caso:
+
+grid-template-columns: 1fr 2fr 1fr;
+
+a cada frame ou porcentagem adicionada, será inserida mais uma coluna no grid.
+
+existe uma forma mais prática de inserir essas unidades no CSS, que é usando o "repeat":
+
+grid-template-columns: repeat(3, 1fr);
+
+significa o que: que é para repetir 3 vezes, ou seja, 3 colunas de 1 frame.
+somente para colunas com o mesmo frame, ou seja, com a mesma "medida";
+
+definição das LINHAS do grid:
+
+grid-template-rows: é bem semelhante ao template columns:
+grid-template-rows: 1fr 2fr 1fr;
+
+teremos 3 linhas: a primra com 1fr (frame), a segunda, central, com 2fr e a terceira com 1fr.
+
+grid-auto-rows: 210px; configura todas as linhas com 210px automaticamente, porém, quebram o texto pois não são adaptaveis.
+
+Para isso podemos usar uma funcionalidade chamda de minmax, que aponta o min e o max de "tamanho" de cada linha:
+
+grid-auto-rows: minmax(210px, 100%);
+
+aponta que a altura minima da linha é de 210px, e mesmo que testemos a responsividade verticalmente, ela não diminuirá a menos que 210px, porém, ocupará 100% no máximo, verticalmente.
+
+<entendendo o gap:>
+é basicamente a mesma coisa do flex-box, com a diferença que temos:
+row-gap: gap de linha;
+column-gap: gap de coluna;
+gap: que é o gap geral e um atalho para os dois;
+
+em resumo:
+gap: 10px 15px aplica 10px de distância entre as linhas e 15px de distância entre as colunas;
+
+<exercicio de fixação do grid:>
+
+usar o "auto" ao invés de 100% em uma das propriedades;
+
+**14/02/23**
+
+Manipulando linhas e colunas no Grid.
+
+Entendendo grid-column:
+
+Com o grid-column definimos o tamanho de nossas colunas;
+
+.item-1 {
+    grid-column: 1/4;
+}
+
+**aponta que: o item-1 ocupará no grid, o tamanho a partir da coluna 1 até a coluna 4**
+
+.item-2 {
+    grid-column: 1/3;
+}
+
+**aponta que: o item-2 ocupara no grid, o tamanho a partir da coluna 1 até a coluna 3**
+
+peuqneo exercicio:
+
+manipular os items 6, 8 e 9.
+
+feito - ok.
+
+Entendendo grid-row:
+
+o grid row configura o espaço das linhas, ou quanto de espaço ela vai tomar no grid:
+
+.item-6 {
+    grid-column: 1/3;
+    grid-row: 4/6;
+}
+
+aponta que o item-6 vai ocupar da coluna 1 até a 3 na horizontal, e ocupara da linha 4 até a 6, ocupando dois espaços na vertical. 
+
+lembrando que, tudo isso é comandado pelos frames, no inicio com o grid-template-columns 3fr, 1fr. 
+
+quando temos 3 frames, significa que temos 4 colunas, se tivessemos 4fr, teriamos 5 colunas e assim por diante.
+
+**mini-exercicio**
+
+Fazer um grid em acordo com o mockup:
+
+feito, corrigido, estava certo.
+
+***22/02/2023***
+
+***Grid-template-areas**
+uma forma mais facil de montar o grid:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
